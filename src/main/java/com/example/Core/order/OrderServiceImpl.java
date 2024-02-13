@@ -21,5 +21,11 @@ public class OrderServiceImpl implements OrderService{
         int discountPrice = discountPolicy.discount(member,itemPrice);
         return new Order(memberId,itemName,itemPrice,discountPrice);
     }
+    
+    
+    //FIXME: 테스트용
+    public MemberRepository getMemberRepository (){
+        return memberRepository;
+    }
 }
 //할인 정책을 이용하는 클라이언트인데 이 클라이언트 코드가 변경되어야하는 상황 발생.

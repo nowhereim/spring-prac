@@ -45,14 +45,14 @@ public class ApplicationContextSameBeanFindTest {
     //이렇게 같은 타입 2개 일때 빈 조회 하려면 이름으로 조회 하면 된다.
     static class SameBeanConfig {
         @Bean
-        public MemberRepository memberRespository1() {
+        public MemberRepository memberRepository1() {
             return new MemoryMemberRepository();
         }
 
         ;
 
         @Bean
-        public MemberRepository memberRespository2() {
+        public MemberRepository memberRepository2() {
             return new MemoryMemberRepository();
         }
 
