@@ -8,6 +8,7 @@ import com.example.Core.member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+
 public class OrderServiceTest {
     AppConfig appConfig = new AppConfig();
     MemberService memberService = appConfig.memberService();
