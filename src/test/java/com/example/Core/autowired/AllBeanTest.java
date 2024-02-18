@@ -20,7 +20,7 @@ public class AllBeanTest {
         DiscountService discountService = ac.getBean(DiscountService.class);
         Member member = new Member(1L, "user", Grade.VIP);
         int discountPrice = discountService.discount(member,10000, "fixDiscountPolicy");
-        Assertions.assertThat(discountService).isSameAs(DiscountService.class);
+        Assertions.assertThat(discountService).isInstanceOf(DiscountService.class);
         // TODO 여기서 부터 시작 7분 19초
     }
 
