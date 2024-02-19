@@ -21,6 +21,12 @@ public class AllBeanTest {
         Member member = new Member(1L, "user", Grade.VIP);
         int discountPrice = discountService.discount(member,10000, "fixDiscountPolicy");
         Assertions.assertThat(discountService).isInstanceOf(DiscountService.class);
+
+        Assertions.assertThat(discountPrice).isEqualTo(1000);
+
+        int rateDsicountPrice = discountService.discount(member,20000, "rateDiscountPolicy");
+        Assertions.assertThat(rateDsicountPrice).isEqualTo(2000);
+
         // TODO 여기서 부터 시작 7분 19초
     }
 
@@ -35,8 +41,9 @@ public class AllBeanTest {
             System.out.println("policyList = " + policyList);
         }
 
-        public int discount(Member member, int i, String fixDiscountPolicy) {
-            return 0;
+        public int discount(Member member, int price, String discountCode) {
+            DiscountPolicy discountPolicy = policyMap.get(discountCode);
+            return discountPolicy.discount(member,price);
         }
     }
 }
